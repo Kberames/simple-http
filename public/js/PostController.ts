@@ -105,5 +105,9 @@ namespace App {
                 }
             );
         }
+
+        public test () {
+            console.log ('***** TEST ****');
+        }
     }
 }

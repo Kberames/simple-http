@@ -7,19 +7,10 @@
   },
   "posts": [
     {
-      "title": "test post",
-      "description": "test description",
-      "author": "test author",
+      "title": "changed title",
+      "description": "changed description",
+      "author": ";'lk",
       "id": 1
-    },
-    {
-      "title": "test post",
-      "description": "test description",
-      "author": "test author",
-      "id": 2
-    },
-    {
-      "id": 3
     }
   ]
 }
