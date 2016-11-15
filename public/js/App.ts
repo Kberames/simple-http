@@ -1,6 +1,7 @@
 namespace App {
     let app = angular.module ('App', ['ui.router']);
 
+
     app.config ([
         '$stateProvider',
 
