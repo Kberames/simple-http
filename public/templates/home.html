@@ -1,1 +1,13 @@
 <h2>Home Page</h2>
+
+<ul>
+    <li ng-repeat="post in homeController.postList">
+        <div class="post">
+            <div>
+                <strong>title:</strong> {{ post.title }}
+                <strong>description:</strong> {{ post.description }}
+                <strong>author:</strong> {{ post.author }}
+            </div>
+        </div>
+    </li>
+</ul>
