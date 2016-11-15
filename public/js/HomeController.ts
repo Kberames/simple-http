@@ -1,32 +1,30 @@
 namespace App {
     export class HomeController {
-        static $inject = ['$http'];
+        static $inject = ['$http', 'PostService'];
 
         private httpService;
+        private postService;
 
         public postList;
 
                 constructor (
-                    $http: angular.IHttpService,
+                    $http: angular.IHttpService, postService: App.PostService
                 ) {
                     this.httpService = $http;
+                    this.postService = postService;
 
-                    this.getPostList();
+                    console.log ('This is my post service: ', this.postService);
 
+                    this.postService.getPostList()
+                        .success ((response) => {
+                            console.info ('This is the response: ', response);
+                            this.postList = response;
+                        })
+                        .error ((response) => {
+                            console.error ('There was an error: ', response);
+
+
+                        });
                 }
-
-        public getPostList () {
-            this.httpService ({
-                url: '/posts',
-                method: 'GET'
-            })
-            .success ((response)=> {
-                this.postList = response;
-
-            })
-            .error ((response)=> {
-
-            })
-        }
     }
 }
