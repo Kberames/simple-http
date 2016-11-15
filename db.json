@@ -7,28 +7,16 @@
   },
   "posts": [
     {
-      "title": "changed title",
-      "description": "changed description",
-      "author": ";'lk",
-      "id": 1
+      "title": "new title",
+      "description": "new desc",
+      "author": "new author",
+      "id": 15
     },
     {
-      "title": "Here",
-      "description": "Here it is",
-      "author": "Kim",
-      "id": 6
-    },
-    {
-      "title": "Here",
-      "description": "Here it is",
-      "author": "Kim",
-      "id": 7
-    },
-    {
-      "title": "Here",
-      "description": "Here it is",
-      "author": "Kim",
-      "id": 8
+      "title": "another title",
+      "description": "another desc",
+      "author": "another auth",
+      "id": 16
     }
   ]
 }

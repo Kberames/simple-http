@@ -1,24 +1,31 @@
 namespace App {
     export class PostController {
-        static $inject = ['$http', '$state'];
+        static $inject = ['$http', '$state', 'PostService'];
 
         private httpService;
         private stateService;
+        private postService;
 
         public postList;
         public currentPost;
         public newPost;
 
-        public title;
-        public description;
-        public author;
+        public postObject;
 
         constructor (
             $http: angular.IHttpService,
-            $state: angular.ui.IState
+            $state: angular.ui.IState,
+            postService: App.PostService
         ) {
             this.httpService = $http;
             this.stateService = $state;
+            this.postService = postService;
+
+            this.postObject = {
+                title: '',
+                description: '',
+                author: ''
+            };
 
             console.log ('- test: ', this.stateService);
 
@@ -30,27 +37,20 @@ namespace App {
 
         public getPostList () {
             console.log ('here');
-            this.httpService ({
-                url: '/posts',
-                method: 'GET'
-            })
-            .success ((response) => {
-                console.log ('Test data: ', response);
-                this.postList = response;
-            })
-            .error ((response) => {
-            });
+            this.postService.getPostList()
+                .success ((response) => {
+                    console.info ('This is the response: ', response);
+                    this.postList = response;
+                })
+                .error ((response) => {
+                    console.error ('There was an error with the  to getPostList ');
+
+                })
         }
 
         public getPost (id) {
             console.log ('here');
-            this.httpService ({
-                url: '/posts',
-                method: 'GET',
-                params: {
-                    id: id
-                }
-            })
+            this.postService.getPost(id)
             .success ((response) => {
                 console.log ('Test data: ', response);
                 // this.postList = response;
@@ -61,39 +61,28 @@ namespace App {
         }
 
         public save () {
-            console.log ('Data to save: ', this.title);
+            //console.log ('Data to save: ', this.title);
 
-            this.httpService ({
-                url: '/posts',
-                method: 'POST',
-                data: {
-                    title: this.title,
-                    description: this.description,
-                    author: this.author
-                }
-            })
-            .success ((response) => {
-                console.log ('Test data: ', response);
-            })
-            .error ((response) => {
-            });
+
+            this.postService.savePost(this.postObject, -1)
+                .success ((response) => {
+                    console.log ('Test data: ', response);
+                })
+                .error ((response) => {
+                });
+            this.getPostList ();
         }
 
         public deletePost (id) {
-            console.log ('Deleting Post: ' + id);
 
-            this.httpService ({
-                url: '/posts/' + id,
-                method: 'DELETE'
-            })
-            .success ((response) => {
-                console.log ('Object deleted.');
-                console.log ('Test data: ', response);
+            this.postService.deletePost (id)
+                .success ((response) => {
+                    this.stateService.go ('posts');
+                })
+                .error ((response) => {
+                });
 
-                this.stateService.go ('home');
-            })
-            .error ((response) => {
-            });
+            this.getPostList ();
         }
 
         public editPost (postId) {

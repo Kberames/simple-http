@@ -34,8 +34,8 @@
 
 
 <form ng-submit="postController.save ()">
-    <input name="title" ng-model="postController.title"> <br>
-    <input name="description" ng-model="postController.description"> <br>
-    <input name="author" ng-model="postController.author"> <br>
+    <input name="title" ng-model="postController.postObject.title"> <br>
+    <input name="description" ng-model="postController.postObject.description"> <br>
+    <input name="author" ng-model="postController.postObject.author"> <br>
     <button type="submit">Save Post</button>
 </form>
