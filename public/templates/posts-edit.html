@@ -1,18 +1,18 @@
 <h2>Posts Edit</h2>
 
-<form ng-submit = "postEditController.save ()">
+<form ng-submit = "postEditController.save ()" class="form-group">
 
     <label>Title</label>
-    <input ng-model="postEditController.post.title" required>
+    <input ng-model="postEditController.post.title" class="form-control" required>
     <br>
 
     <label>Description</label>
-    <input ng-model="postEditController.post.description">
+    <input ng-model="postEditController.post.description" class="form-control">
     <br>
 
     <label>Author</label>
-    <input ng-model="postEditController.post.author">
+    <input ng-model="postEditController.post.author" class="form-control">
     <br>
 
-    <button>Save</button>
+    <button class="btn btn-primary">Save</button>
 <form>

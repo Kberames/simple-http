@@ -17,3 +17,19 @@ body {
 .post.edit input {
     display: inline-block;
 }
+
+.sandbox {
+    display: none;
+}
+
+input.ng-invalid {
+    background-color: #fbc4c4;
+}
+
+/*.form-group p {
+    color: red;
+    font-weight: bold;
+    max-width: 800px;
+    padding: 10px;
+}
+*/
