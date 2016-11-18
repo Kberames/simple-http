@@ -1,52 +1,78 @@
 <h2>Sample Form</h2>
+<div class="register">
+    <div class="btn-group">
+        <button class="btn btn-primary"
+        ng-model="sampleFormController.btnGroup.left"
+        uib-btn-checkbox>Left</button>
 
-<form name="userRegister" ng-submit="sampleFormController.saveUser(userRegister)" novalidate>
-    <!-- Form validation info -->
-    <div class="">
-        <div class="">Valid: {{userRegister.$valid}}</div>
-        <div class="">InValid: {{userRegister.$invalid}}</div>
-        <div class="">Pristine: {{userRegister.$pristine}}</div>
-        <div class="">Dirty: {{userRegister.$dirty}}</div>
-        <div class="">Touched: {{userRegister.$touched}}</div>
+        <button class="btn btn-primary"
+        ng-model="sampleFormController.btnGroup.middle"
+        uib-btn-checkbox>Middle</button>
+
+        <button class="btn btn-primary"
+        ng-model="sampleFormController.btnGroup.right"
+        uib-btn-checkbox>Right</button>
     </div>
 
-    <div class="form-group">
-        <!-- Full name of user -->
-        <label>Full Name</label>
-        <input class="form-inline" name="fullname" ng-model="sampleFormController.fullName"
-         placeholder="Your full name" type="text" required ng-minlength="2" ng-maxlength="24"
-         autocomplete="off">
-        <p ng-show="userRegister.fullname.$invalid">Please enter a valid username.</p>
-    </div>
+    <ul>
+        <li ng-repeat="item in sampleFormController.btnGroup">
+            {{item}}
+        </li>
+    </ul>
+</div>
 
-    <div class="form-group">
-        <!-- Full name of user -->
-        <label>Username</label>
-        <input class="form-inline" name="username" ng-model="sampleFormController.username"
-         placeholder="Your user name" type="text" required ng-minlength="5" ng-maxlength="12"
-         autocomplete="off">
-        <p ng-show="userRegister.username.$invalid">Please enter a valid user name.</p>
-    </div>
 
-    <div class="form-group">
-        <!-- Full name of user -->
-        <label>Password</label>
-        <input class="form-inline" name="password" ng-model="sampleFormController.password"
-         placeholder="Your password" type="password" required autocomplete="off">
-        <p ng-show="userRegister.password.$invalid">Please enter a valid password.</p>
-    </div>
 
-    <div class="form-group">
-        <!-- Full name of user -->
-        <label>Email</label>
-        <input class="form-inline" name="email" ng-model="SampleFormController.email"
-        placeholder="Your email address" type="email" required autocomplete="off">
+<div class="register">
 
-        <p ng-show="userRegister.email.$invalid">Please enter a valid email address.</p>
-    </div>
+    <form name="userRegister" ng-submit="sampleFormController.saveUser(userRegister)" novalidate>
+        <!-- Form validation info -->
+        <div class="">
+            <div class="">Valid: {{userRegister.$valid}}</div>
+            <div class="">InValid: {{userRegister.$invalid}}</div>
+            <div class="">Pristine: {{userRegister.$pristine}}</div>
+            <div class="">Dirty: {{userRegister.$dirty}}</div>
+            <div class="">Touched: {{userRegister.$touched}}</div>
+        </div>
 
-    <button type="submit" class="btn-btnprimary">Submit</button>
-</form></br>
+        <div class="form-group">
+            <!-- Full name of user -->
+            <label>Full Name</label>
+            <input class="form-inline" name="fullname" ng-model="sampleFormController.fullName"
+             placeholder="Your full name" type="text" required ng-minlength="2" ng-maxlength="24"
+             autocomplete="off">
+            <p ng-show="userRegister.fullname.$invalid">Please enter a valid username.</p>
+        </div>
+
+        <div class="form-group">
+            <!-- Full name of user -->
+            <label>Username</label>
+            <input class="form-inline" name="username" ng-model="sampleFormController.username"
+             placeholder="Your user name" type="text" required ng-minlength="5" ng-maxlength="12"
+             autocomplete="off">
+            <p ng-show="userRegister.username.$invalid">Please enter a valid user name.</p>
+        </div>
+
+        <div class="form-group">
+            <!-- Full name of user -->
+            <label>Password</label>
+            <input class="form-inline" name="password" ng-model="sampleFormController.password"
+             placeholder="Your password" type="password" required autocomplete="off">
+            <p ng-show="userRegister.password.$invalid">Please enter a valid password.</p>
+        </div>
+
+        <div class="form-group">
+            <!-- Full name of user -->
+            <label>Email</label>
+            <input class="form-inline" name="email" ng-model="SampleFormController.email"
+            placeholder="Your email address" type="email" required autocomplete="off">
+
+            <p ng-show="userRegister.email.$invalid">Please enter a valid email address.</p>
+        </div>
+
+        <button type="submit" class="btn-btnprimary">Submit</button>
+    </form></br>
+</div>
 
 <div class="sandbox">
 

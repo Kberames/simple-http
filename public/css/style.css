@@ -26,10 +26,9 @@ input.ng-invalid {
     background-color: #fbc4c4;
 }
 
-/*.form-group p {
-    color: red;
-    font-weight: bold;
-    max-width: 800px;
-    padding: 10px;
+.register {
+   border: 1px solid #cdcdcd ;
+   margin: auto;
+   max-width: 800px;
+   padding: 50px;
 }
-*/

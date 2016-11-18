@@ -1,9 +1,18 @@
 namespace App {
     export class SampleFormController {
         public fullName;
+        public btnGroup;
 
         constructor () {
             this.fullName = "";
+
+            // Create an object to track the true or false
+            // of each of the buttons
+            this.btnGroup = {
+                left: false,
+                middle: false,
+                right: true
+            }
         }
 
         public saveUser (userRegister){

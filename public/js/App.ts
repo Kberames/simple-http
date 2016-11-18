@@ -1,5 +1,5 @@
 namespace App {
-    let app = angular.module ('App', ['ui.router']);
+    let app = angular.module ('App', ['ui.router', 'ui.bootstrap']);
 
 
     app.config ([
